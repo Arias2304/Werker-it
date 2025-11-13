@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cliente Â· Servicios del Hogar Multiplataforma</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-workspace="client">
+    <header class="sub-hero sub-hero--client">
+      <div class="sub-hero__content">
+        <a href="index.html" class="back-link" data-i18n="role_back_home">Volver al inicio</a>
+        <p class="chip" data-i18n="hero_chip">5 paises &middot; 5 idiomas &middot; 5 monedas</p>
+        <h1 data-i18n="client_workspace_heading">Ambiente de clientes</h1>
+        <p data-i18n="client_workspace_intro">
+          Accede a tus registros, depositos y seguimiento personalizado.
+        </p>
+        <div class="sub-hero__actions">
+          <button id="logout-button" class="btn ghost" data-i18n="logout_button">Cerrar sesion</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace workspace--page">
+      <section class="workspace__view is-active">
+        <div class="workspace__columns">
+
+          <div class="card workspace__card">
+            <h3 data-i18n="deposit_title">DepÃ³sito de clientes</h3>
+            <p class="session-context" data-session-email="client"></p>
+            <p class="wallet-summary" data-wallet-balance="client"></p>
+            <form id="deposit-form">
+              <label>
+                <span data-i18n="deposit_amount_label">Monto (moneda local)</span>
+                <input type="number" name="amount" step="0.01" min="0.01" required />
+              </label>
+              <div class="auth__actions">
+                <button type="submit" class="btn secondary" data-i18n="deposit_button">Depositar</button>
+              </div>
+              <p class="form-message" id="deposit-form-message"></p>
+            </form>
+          </div>
+
+          <div class="card workspace__card">
+            <h3 data-i18n="catalog_title">CatÃ¡logo de profesionales</h3>
+            <p data-i18n="catalog_caption">
+              Explora los profesionales disponibles por especialidad y selecciona el trabajo que necesites.
+            </p>
+            <label>
+              <span data-i18n="catalog_filter_label">Especialidad</span>
+              <select id="catalog-specialty" data-specialty-filter>
+                <option value="" data-i18n-option="specialty_filter_all">Todas las especialidades</option>
+              </select>
+            </label>
+            <div id="service-catalog" class="service-catalog" role="list"></div>
+          </div>
+
+          <div class="card workspace__card">
+            <h3 data-i18n="service_request_title">Solicita un servicio</h3>
+            <p data-i18n="service_request_caption">
+              Selecciona un trabajo del catÃ¡logo y completa los datos para enviar la solicitud.
+            </p>
+            <div class="service-selection" id="selected-service-summary">
+              <p class="service-selection__placeholder" data-i18n="service_request_selected_placeholder">
+                NingÃºn servicio seleccionado todavÃ­a.
+              </p>
+              <div class="service-selection__details" hidden>
+                <p>
+                  <strong id="selected-service-name"></strong>
+                  <span id="selected-service-price" class="service-price"></span>
+                </p>
+                <p id="selected-service-professional" class="service-selection__meta"></p>
+              </div>
+            </div>
+            <p class="session-context" data-session-email="client"></p>
+            <form id="service-request-form">
+              <input type="hidden" name="service_id" id="service-request-service-id" />
+              <label>
+                <span data-i18n="service_request_description_label">DescripciÃ³n de la necesidad</span>
+                <textarea name="description" rows="3" maxlength="255" required></textarea>
+              </label>
+              <label>
+                <span data-i18n="service_request_urgency_label">Urgencia</span>
+                <select name="urgency">
+                  <option value="low" data-i18n-option="urgency_low">Baja</option>
+                  <option value="normal" data-i18n-option="urgency_normal" selected>Normal</option>
+                  <option value="high" data-i18n-option="urgency_high">Alta</option>
+                </select>
+              </label>
+              <div class="auth__actions">
+                <button type="submit" class="btn secondary" data-i18n="service_request_submit">
+                  Enviar solicitud
+                </button>
+              </div>
+              <p class="form-message" id="service-request-form-message"></p>
+            </form>
+          </div>
+
+          <div class="card workspace__card">
+            <h3 data-i18n="client_requests_title">Solicitudes activas</h3>
+            <p data-i18n="client_requests_caption">
+              Revisa el estado de tus solicitudes y confirma el resultado cuando corresponda.
+            </p>
+            <p class="form-message" id="client-request-message"></p>
+            <ul id="client-request-list" class="service-list"></ul>
+            <p id="client-request-empty" class="service-list__empty" data-i18n="client_requests_empty">
+              Aun no has creado solicitudes.
+            </p>
+          </div>
+
+          <div class="card card--info workspace__card">
+            <h3 data-i18n="client_workspace_heading">Ambiente de clientes</h3>
+            <p data-i18n="client_workspace_intro">
+              Accede a tus registros, depÃ³sitos y seguimiento personalizado.
+            </p>
+          </div>
+
+</div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer_copy">&copy; 2024 Plataforma Multiplataforma &middot; Cumplimos normativas locales.</p>
+    </footer>
+
+    <script src="assets/js/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profesional Â· Servicios del Hogar Multiplataforma</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-workspace="professional">
+    <header class="sub-hero sub-hero--professional">
+      <div class="sub-hero__content">
+        <a href="index.html" class="back-link" data-i18n="role_back_home">Volver al inicio</a>
+        <p class="chip" data-i18n="hero_chip">5 paises &middot; 5 idiomas &middot; 5 monedas</p>
+        <h1 data-i18n="professional_workspace_heading">Ambiente de profesionales</h1>
+        <p data-i18n="professional_workspace_intro">
+          Gestiona tu agenda, retiros y reputacion global en un solo lugar.
+        </p>
+        <div class="sub-hero__actions">
+          <button id="logout-button" class="btn ghost" data-i18n="logout_button">Cerrar sesion</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace workspace--page">
+      <section class="workspace__view is-active">
+        <div class="workspace__columns">
+
+          <div class="card workspace__card">
+            <h3 data-i18n="professional_services_card_title">CatÃ¡logo de trabajos</h3>
+            <p data-i18n="professional_services_card_subtitle">
+              Describe los servicios que ofreces y cuÃ¡nto cobra cada uno.
+            </p>
+            <p class="session-context" data-session-email="professional"></p>
+            <form id="professional-service-form">
+              <label>
+                <span data-i18n="professional_services_specialty_label">Especialidad del trabajo</span>
+                <select name="specialty" data-specialty-select required></select>
+              </label>
+              <label>
+                <span data-i18n="professional_services_name_label">Nombre del trabajo</span>
+                <input type="text" name="title" maxlength="120" required />
+              </label>
+              <label>
+                <span data-i18n="professional_services_description_label">DescripciÃ³n</span>
+                <textarea name="description" rows="3" maxlength="255" required></textarea>
+              </label>
+              <label>
+                <span data-i18n="professional_services_cost_label">Costo base</span>
+                <input type="number" name="base_cost" step="0.01" min="0.5" required />
+              </label>
+              <div class="auth__actions">
+                <button type="submit" class="btn secondary" data-i18n="professional_services_submit">
+                  Registrar trabajo
+                </button>
+              </div>
+              <p class="form-message" id="professional-service-form-message"></p>
+            </form>
+            <div class="service-preview">
+              <h4 data-i18n="professional_services_preview_title">Trabajos registrados</h4>
+              <ul id="professional-service-list" class="service-list"></ul>
+              <p id="professional-service-empty" class="service-list__empty" data-i18n="professional_services_empty">
+                AÃºn no has registrado trabajos.
+              </p>
+            </div>
+          </div>
+
+          <div class="card workspace__card">
+            <h3 data-i18n="professional_requests_title">Solicitudes recibidas</h3>
+            <p data-i18n="professional_requests_caption">
+              Revisa las solicitudes de tus clientes y decide si las aceptas o rechazas.
+            </p>
+            <p class="form-message" id="professional-request-message"></p>
+            <ul id="professional-request-list" class="service-list"></ul>
+            <p
+              id="professional-request-empty"
+              class="service-list__empty"
+              data-i18n="professional_requests_empty"
+            >
+              Aun no tienes solicitudes pendientes.
+            </p>
+          </div>
+
+          <div class="card workspace__card">
+            <h3 data-i18n="withdraw_title">Retiro de profesionales</h3>
+            <p class="session-context" data-session-email="professional"></p>
+            <p class="wallet-summary" data-wallet-balance="professional"></p>
+            <form id="withdraw-form">
+              <label>
+                <span data-i18n="withdraw_amount_label">Monto (moneda local)</span>
+                <input type="number" name="amount" step="0.01" min="0.01" required />
+              </label>
+              <div class="auth__actions">
+                <button type="submit" class="btn secondary" data-i18n="withdraw_button">Retirar</button>
+              </div>
+              <p class="form-message" id="withdraw-form-message"></p>
+            </form>
+          </div>
+
+          <div class="card card--info workspace__card">
+            <h3 data-i18n="professional_workspace_heading">Ambiente de profesionales</h3>
+            <p data-i18n="professional_workspace_intro">
+              Gestiona tu agenda, retiros y reputacion global en un solo lugar.
+            </p>
+          </div>
+
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer_copy">&copy; 2024 Plataforma Multiplataforma &middot; Cumplimos normativas locales.</p>
+    </footer>
+
+    <script src="assets/js/app.js" type="module"></script>
+  </body>
+</html>

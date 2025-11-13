@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador · Servicios del Hogar Multiplataforma</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-workspace="admin">
+    <header class="sub-hero sub-hero--admin">
+      <div class="sub-hero__content">
+        <a href="index.html" class="back-link" data-i18n="role_back_home">Volver al inicio</a>
+        <p class="chip" data-i18n="hero_chip">5 paises &middot; 5 idiomas &middot; 5 monedas</p>
+        <h1 data-i18n="admin_workspace_heading">Ambiente de administracion</h1>
+        <p data-i18n="admin_workspace_intro">
+          Supervisa balances, auditorias y controles regulatorios en la region.
+        </p>
+        <div class="sub-hero__actions">
+          <button id="logout-button" class="btn ghost" data-i18n="logout_button">Cerrar sesion</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace workspace--page">
+      <section class="workspace__view is-active">
+        <div class="workspace__columns workspace__columns--two">
+          <div class="card workspace__card">
+            <h3 data-i18n="admin_workspace_heading">Ambiente de administracion</h3>
+            <p data-i18n="admin_workspace_intro">
+              Supervisa balances, auditorias y controles regulatorios en la region.
+            </p>
+            <ul class="workspace__list">
+              <li data-i18n="admin_workspace_point_one">Controla saldos en tiempo real.</li>
+              <li data-i18n="admin_workspace_point_two">Revisa logs y evidencias exportables.</li>
+              <li data-i18n="admin_workspace_point_three">Coordina acciones con equipos locales.</li>
+            </ul>
+          </div>
+
+          <div class="card card--identity workspace__card">
+            <h3 data-i18n="admin_identity_title">Administrador nacional activo</h3>
+            <p class="admin-identity__badge" data-admin-identity></p>
+            <dl class="admin-identity__details">
+              <div>
+                <dt data-i18n="admin_identity_username">Usuario asignado</dt>
+                <dd><code data-admin-username></code></dd>
+              </div>
+              <div>
+                <dt data-i18n="admin_identity_email">Correo corporativo</dt>
+                <dd><code data-admin-email></code></dd>
+              </div>
+            </dl>
+            <p class="admin-identity__hint" data-i18n="admin_identity_hint">
+              Este espacio responde a la normativa y al idioma del pais que administras.
+            </p>
+          </div>
+        </div>
+
+        <div class="card workspace__card">
+          <div class="card__header">
+            <div>
+              <h3 data-i18n="admin_wallet_title">Comisiones retenidas</h3>
+              <p data-i18n="admin_wallet_hint">
+                Visualiza el 10% retenido automaticamente en favor del administrador regional.
+              </p>
+            </div>
+          </div>
+          <p class="session-context" data-session-email="admin"></p>
+          <p class="wallet-summary" data-wallet-balance="admin"></p>
+        </div>
+
+        <div class="card card--info workspace__card">
+          <h3 data-i18n="admin_credentials_title">Administradores por pais</h3>
+          <p data-i18n="admin_credentials_copy">
+            Cada territorio opera con credenciales independientes que comparten la misma clave maestra.
+          </p>
+          <p class="admin-credentials__password">
+            <span data-i18n="admin_password_label">Contrasena:</span> <code>Admin123!</code>
+          </p>
+          <ul id="admin-credential-list" class="admin-credential-list"></ul>
+        </div>
+
+        <div class="card workspace__card">
+          <div class="card__header">
+            <div>
+              <h3 data-i18n="admin_disputes_title">Solicitudes en disputa</h3>
+              <p data-i18n="admin_disputes_caption">
+                Define si corresponde liberar el pago o mantenerlo retenido segun la evidencia.
+              </p>
+            </div>
+          </div>
+          <div id="admin-dispute-message" class="form-message" role="status" aria-live="polite"></div>
+          <p id="admin-dispute-empty" class="service-list__empty" data-i18n="admin_disputes_empty">
+            No hay disputas pendientes por revisar.
+          </p>
+          <ul id="admin-dispute-list" class="service-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer_copy">&copy; 2024 Plataforma Multiplataforma &middot; Cumplimos normativas locales.</p>
+    </footer>
+
+    <script src="assets/js/app.js" type="module"></script>
+  </body>
+</html>

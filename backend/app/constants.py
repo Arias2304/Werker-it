@@ -1,0 +1,55 @@
+COUNTRY_CONFIG = {
+    "MX": {
+        "country_name": "Mexico",
+        "language_code": "es-MX",
+        "language_label": "Espanol (Mexico)",
+        "currency": "MXN",
+        "nationality_label": "Nacionalidad mexicana",
+        "admin_slug": "mexico",
+    },
+    "US": {
+        "country_name": "Estados Unidos",
+        "language_code": "en-US",
+        "language_label": "Ingles (Estados Unidos)",
+        "currency": "USD",
+        "nationality_label": "American nationality",
+        "admin_slug": "usa",
+    },
+    "BR": {
+        "country_name": "Brasil",
+        "language_code": "pt-BR",
+        "language_label": "Portugues (Brasil)",
+        "currency": "BRL",
+        "nationality_label": "Nacionalidade brasileira",
+        "admin_slug": "brasil",
+    },
+    "FR": {
+        "country_name": "Francia",
+        "language_code": "fr-FR",
+        "language_label": "Frances (Francia)",
+        "currency": "EUR",
+        "nationality_label": "Nationalité française",
+        "admin_slug": "francia",
+    },
+    "JP": {
+        "country_name": "Japon",
+        "language_code": "ja-JP",
+        "language_label": "Japones (Japon)",
+        "currency": "JPY",
+        "nationality_label": "日本国籍",
+        "admin_slug": "japon",
+    },
+}
+
+SPECIALTIES = [
+    "Plomeria",
+    "Cerrajeria",
+    "Electricista",
+    "Carpinteria",
+    "Instalacion de electrodomesticos",
+    "Reparacion de vidrios",
+    "HVAC (Climatizacion)",
+    "Pintura residencial",
+    "Jardineria y paisajismo",
+    "Limpieza profunda",
+]

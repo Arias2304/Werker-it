@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WERKER-IT | Acceso a servicios</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body class="auth-body">
+    <main class="auth-shell" role="main">
+      <header class="auth-shell__header">
+        <p class="chip" data-i18n="hero_chip">5 paises &middot; 5 idiomas &middot; 5 monedas</p>
+        <label class="language-switch">
+          <span data-i18n="language_label">Idioma</span>
+          <select id="language-select" aria-label="Selector de idioma">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+            <option value="fr">FR</option>
+            <option value="ja">JA</option>
+          </select>
+        </label>
+      </header>
+
+      <section class="auth-card" aria-labelledby="auth-card-title">
+        <div class="auth-card__intro">
+          <p class="brand-pill">WERKER-IT</p>
+          <h1 id="auth-card-title" data-i18n="auth_brand_headline">Bienvenido a WERKER-IT</h1>
+          <p class="auth-card__copy" data-i18n="auth_brand_copy">
+            Conecta clientes y profesionales con seguimiento transparente.
+          </p>
+          <ul class="auth-card__benefits">
+            <li data-i18n="auth_benefit_one">Onboarding guiado para clientes y especialistas.</li>
+            <li data-i18n="auth_benefit_two">Registro y login en un mismo flujo.</li>
+            <li data-i18n="auth_benefit_three">Operaciones seguras en toda la región.</li>
+          </ul>
+        </div>
+
+        <div class="auth-card__content">
+          <div class="auth-card__tabbar" role="tablist">
+            <button
+              type="button"
+              class="auth-view-tab is-active"
+              role="tab"
+              id="auth-tab-register"
+              aria-controls="auth-panel-register"
+              aria-selected="true"
+              data-auth-view="register"
+              tabindex="0"
+              data-i18n="auth_tab_register"
+            >
+              Registrarse
+            </button>
+            <button
+              type="button"
+              class="auth-view-tab"
+              role="tab"
+              id="auth-tab-login"
+              aria-controls="auth-panel-login"
+              aria-selected="false"
+              data-auth-view="login"
+              tabindex="-1"
+              data-i18n="auth_tab_login"
+            >
+              Iniciar sesion
+            </button>
+          </div>
+          <section
+            class="auth-view-panel is-active"
+            id="auth-panel-register"
+            role="tabpanel"
+            aria-labelledby="auth-tab-register"
+            data-auth-panel="register"
+          >
+            <div class="section-heading">
+              <h2 data-i18n="register_title">Registro rapido</h2>
+              <p class="register-caption" data-i18n="register_caption">Elige el tipo de cuenta que deseas crear.</p>
+            </div>
+            <div class="register-tabs" role="tablist">
+              <button
+                type="button"
+                class="register-tab is-active"
+                role="tab"
+                id="register-tab-client"
+                aria-selected="true"
+                aria-controls="register-panel-client"
+                data-register-tab="client"
+                tabindex="0"
+                data-i18n="register_tab_client"
+              >
+                Cliente
+              </button>
+              <button
+                type="button"
+                class="register-tab"
+                role="tab"
+                id="register-tab-professional"
+                aria-selected="false"
+                aria-controls="register-panel-professional"
+                data-register-tab="professional"
+                tabindex="-1"
+                data-i18n="register_tab_professional"
+              >
+                Profesional
+              </button>
+            </div>
+
+            <div class="register-panels">
+              <div
+                class="register-panel is-active"
+                id="register-panel-client"
+                role="tabpanel"
+                aria-labelledby="register-tab-client"
+                data-register-panel="client"
+              >
+                <form id="client-form" class="stack-form">
+                  <label>
+                    <span data-i18n="client_name_label">Nombre</span>
+                    <input type="text" name="first_name" required />
+                  </label>
+                  <label>
+                    <span data-i18n="client_lastname_label">Apellidos</span>
+                    <input type="text" name="last_name" required />
+                  </label>
+                  <label>
+                    <span data-i18n="client_email_label">Correo</span>
+                    <input type="email" name="email" required />
+                  </label>
+                  <label>
+                    <span data-i18n="client_password_label">Contrasena (min. 8 caracteres)</span>
+                    <input type="password" name="password" minlength="8" required />
+                  </label>
+                  <label>
+                    <span data-i18n="client_phone_label">Telefono</span>
+                    <input type="tel" name="phone" required />
+                  </label>
+                  <label>
+                    <span data-i18n="client_address_label">Direccion</span>
+                    <input type="text" name="address" required />
+                  </label>
+                  <label>
+                    <span data-i18n="client_country_label">Pais e idioma / Nacionalidad</span>
+                    <select name="country" data-country-select required></select>
+                  </label>
+                  <div class="auth__actions">
+                    <button type="submit" class="btn secondary" data-i18n="client_submit">Crear cuenta cliente</button>
+                  </div>
+                  <p class="form-message" id="client-form-message"></p>
+                </form>
+              </div>
+
+              <div
+                class="register-panel"
+                id="register-panel-professional"
+                role="tabpanel"
+                aria-labelledby="register-tab-professional"
+                data-register-panel="professional"
+                hidden
+              >
+                <form id="professional-form" class="stack-form">
+                  <label>
+                    <span data-i18n="professional_name_label">Nombre</span>
+                    <input type="text" name="first_name" required />
+                  </label>
+                  <label>
+                    <span data-i18n="professional_lastname_label">Apellidos</span>
+                    <input type="text" name="last_name" required />
+                  </label>
+                  <label>
+                    <span data-i18n="professional_email_label">Correo</span>
+                    <input type="email" name="email" required />
+                  </label>
+                  <label>
+                    <span data-i18n="professional_password_label">Contrasena (min. 8 caracteres)</span>
+                    <input type="password" name="password" minlength="8" required />
+                  </label>
+                  <label>
+                    <span data-i18n="professional_phone_label">Telefono</span>
+                    <input type="tel" name="phone" required />
+                  </label>
+                  <label>
+                    <span data-i18n="professional_specialty_label">Especialidad</span>
+                    <select name="specialty" id="specialty-select" data-specialty-select required></select>
+                  </label>
+                  <label>
+                    <span data-i18n="professional_country_label">Pais e idioma / Nacionalidad</span>
+                    <select name="country" data-country-select required></select>
+                  </label>
+                  <div class="consent-box">
+                    <p data-i18n="registration_fee_notice">
+                      WERKER-IT retiene automaticamente un 10% de cada trabajo completado para transferirlo al administrador regional.
+                    </p>
+                    <label class="consent-box__option">
+                      <input type="checkbox" name="professional_fee_acceptance" required />
+                      <span data-i18n="registration_fee_accept_label">
+                        Acepto este cobro administrativo y deseo crear mi cuenta.
+                      </span>
+                    </label>
+                  </div>
+                  <div class="auth__actions">
+                    <button type="submit" class="btn secondary" data-i18n="professional_submit">
+                      Crear cuenta profesional
+                    </button>
+                  </div>
+                  <p class="form-message" id="professional-form-message"></p>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="auth-view-panel"
+            id="auth-panel-login"
+            role="tabpanel"
+            aria-labelledby="auth-tab-login"
+            data-auth-panel="login"
+            hidden
+          >
+            <div class="section-heading">
+              <h2 data-i18n="login_title">Iniciar sesion</h2>
+              <p data-i18n="auth_copy">Inicia sesion o registrate sin cambiar de pagina.</p>
+            </div>
+            <form id="login-form" class="stack-form">
+              <label>
+                <span data-i18n="login_email_label">Correo electronico</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="usuario@correo.com"
+                  data-i18n-placeholder="login_email_placeholder"
+                  required
+                />
+              </label>
+              <label>
+                <span data-i18n="login_password_label">Contrasena</span>
+                <input
+                  type="password"
+                  name="password"
+                  minlength="8"
+                  data-i18n-placeholder="login_password_placeholder"
+                  required
+                />
+              </label>
+              <label>
+                <span data-i18n="login_user_type_label">Tipo de usuario</span>
+                <select name="user_type" required>
+                  <option value="client" data-i18n-option="user_type_client">Cliente</option>
+                  <option value="professional" data-i18n-option="user_type_professional">Profesional</option>
+                  <option value="admin" data-i18n-option="user_type_admin">Administrador</option>
+                </select>
+              </label>
+              <div class="auth__actions">
+                <button type="submit" class="btn secondary" data-i18n="login_button">Ingresar</button>
+              </div>
+              <p class="form-message" id="login-form-message"></p>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer_copy">&copy; 2024 Plataforma Multiplataforma &middot; Cumplimos normativas locales.</p>
+    </footer>
+
+    <script src="assets/js/app.js" type="module"></script>
+  </body>
+</html>
